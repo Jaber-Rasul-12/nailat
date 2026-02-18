@@ -1,0 +1,117 @@
+<br>
+<br>
+<br>
+<section class="portfolio-section py-5" id="our-work">
+  <div class="container-fluid">
+    <div class="container our-work-main">
+      <!-- عنوان القسم - محاذاة لليمين -->
+      <div class="text-center mb-5 wow fadeInRight" data-wow-delay=".3s">
+        <div class="section-header">
+          <span class="badge-title">{{ 'أعمالنا' |_ }}</span>
+          <h2 class="main-title">{{ 'أبرز انجازاتنا' |_ }}</h2>
+          <p class="sub-text mt-3">{{ 'تصفح مجموعة من أعمالنا المميزة' |_ }}</p>
+          <p class="description">{{ 'اكتشف كيف نجسد رؤيتنا الإبداعية في كل مشروع من خلال أمثلة حية ملهمة من أعمالنا' |_ }}</p>
+          <a href="#" class="btn-view-all">
+            <span>{{ 'جميع اعمالنا' |_ }}</span>
+            <i class="fa fa-arrow-left"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- معرض الأعمال مع التمرير الأفقي -->
+      <div class="portfolio-wrapper">
+        <div class="portfolio-scroll-container" id="portfolioScroll">
+          <div class="portfolio-grid">
+            <!-- العمل 1 -->
+            <div class="portfolio-item">
+              <div class="portfolio-image">
+                <img src="{{ 'assets/images/work.jpg'|theme }}" alt="مشروع 1" class="img-fluid">
+              </div>
+            </div>
+
+            <!-- العمل 2 -->
+            <div class="portfolio-item">
+              <div class="portfolio-image">
+                <img src="{{ 'assets/images/22.avif'|theme }}" alt="مشروع 2" class="img-fluid">
+              </div>
+            </div>
+
+            <!-- العمل 3 -->
+            <div class="portfolio-item">
+              <div class="portfolio-image">
+                <img src="{{ 'assets/images/23.jpeg'|theme }}" alt="مشروع 3" class="img-fluid">
+              </div>
+            </div>
+
+        
+          </div>
+        </div>
+
+        <!-- النقاط (Pagination Dots) -->
+        <div class="portfolio-pagination">
+          <span class="dot active" onclick="scrollToSlide(0)"></span>
+          <span class="dot" onclick="scrollToSlide(1)"></span>
+          <span class="dot" onclick="scrollToSlide(2)"></span>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+// وظيفة التمرير إلى الصورة المحددة
+function scrollToSlide(index) {
+  const container = document.getElementById('portfolioScroll');
+  const items = document.querySelectorAll('.portfolio-item');
+  
+  if (items.length > 0 && items[index]) {
+    const scrollAmount = items[index].offsetLeft;
+    container.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+  
+  // تحديث النقاط النشطة
+  updateActiveDot(index);
+}
+
+// تحديث النقاط عند التمرير
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('portfolioScroll');
+  const items = document.querySelectorAll('.portfolio-item');
+  const dots = document.querySelectorAll('.dot');
+  
+  if (container) {
+    container.addEventListener('scroll', function() {
+      const scrollPosition = container.scrollLeft;
+      let activeIndex = 0;
+      let minDiff = Infinity;
+      
+      items.forEach((item, index) => {
+        const diff = Math.abs(item.offsetLeft - scrollPosition);
+        if (diff < minDiff) {
+          minDiff = diff;
+          activeIndex = index;
+        }
+      });
+      
+      updateActiveDot(activeIndex);
+    });
+  }
+});
+
+function updateActiveDot(index) {
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach((dot, i) => {
+    if (i === index) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}
+</script>

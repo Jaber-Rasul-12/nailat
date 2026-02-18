@@ -1,0 +1,36 @@
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="{{ '/assets/logo/logo-black.png'|theme }}" rel="icon">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:title" content="{{ 'Nailat' |_ }}">
+<meta property="og:description" content="{{ 'لخدمة الأعمال المتعددة' |_ }}">
+<meta property="og:image" content="{{ link_url }}">
+<meta property="og:url" content="https://nailat.sa/">
+<meta property="og:type" content="website">
+
+<!-- Meta Tags for Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Nailat">
+<meta name="twitter:title" content="Nailat">
+<meta name="twitter:description" content="لخدمة الأعمال المتعددة">
+<meta name="twitter:image" content="{{ '/assets/logo/logo-black.png'|theme }}">
+
+
+
+
+
+
+{% if this.theme.googleanalytics_id is not empty %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ this.theme.googleanalytics_id }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ this.theme.googleanalytics_id }}');
+    </script>
+{% endif %}
