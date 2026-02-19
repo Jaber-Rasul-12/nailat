@@ -13,8 +13,8 @@ export default defineConfig({
         laravel({
             publicDirectory: defaultOutDir,
             input: [
-                'assets/src/css/theme-webksa.css',
-                'assets/src/js/theme-webksa.js',
+                'assets/src/css/theme-nailat.css',
+                'assets/src/js/theme-nailat.js',
             ],
             refresh: {
                 paths: [
