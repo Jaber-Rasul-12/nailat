@@ -22,27 +22,14 @@
       <div class="portfolio-wrapper">
         <div class="portfolio-scroll-container" id="portfolioScroll">
           <div class="portfolio-grid">
+          {% for item in GeneralComponent.getOurWorks %}
             <!-- العمل 1 -->
             <div class="portfolio-item">
               <div class="portfolio-image">
-                <img src="{{ 'assets/images/work.jpg'|theme }}" alt="مشروع 1" class="img-fluid">
+                <img src="{{ item.avatar.path }}" alt="مشروع 1" class="img-fluid">
               </div>
             </div>
-
-            <!-- العمل 2 -->
-            <div class="portfolio-item">
-              <div class="portfolio-image">
-                <img src="{{ 'assets/images/22.avif'|theme }}" alt="مشروع 2" class="img-fluid">
-              </div>
-            </div>
-
-            <!-- العمل 3 -->
-            <div class="portfolio-item">
-              <div class="portfolio-image">
-                <img src="{{ 'assets/images/23.jpeg'|theme }}" alt="مشروع 3" class="img-fluid">
-              </div>
-            </div>
-
+            {% endfor %}
         
           </div>
         </div>

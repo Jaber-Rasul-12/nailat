@@ -23,7 +23,7 @@
                                 <i class="fa fa-map-marker"></i>
                             </div>
                             <div class="contact-text">
-                               الرياض - النيسم الشرقي شارع برقه
+                               {{ GeneralComponent.getSettingWebsiate.map_title }}
                             </div>
                         </li>
                         
@@ -33,7 +33,7 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="contact-text">
-                                <a href="tel:+966574574574091" class="contact-link">+966 57 457 457 4091</a>
+                                <a href="tel:+966574574574091" class="contact-link">{{ GeneralComponent.getSettingWebsiate.numberphone }}</a>
                             </div>
                         </li>
                         
@@ -43,7 +43,7 @@
                                 <i class="fa fa-envelope"></i>
                             </div>
                             <div class="contact-text">
-                                <a href="mailto:nailat@nailat.sa" class="contact-link">nailat@nailat.sa</a>
+                                <a href="mailto:{{ GeneralComponent.getSettingWebsiate.email }}" class="contact-link">{{ GeneralComponent.getSettingWebsiate.email }}</a>
                             </div>
                         </li>
                     </ul>
@@ -68,10 +68,12 @@
                     
                     <!-- حقل الإدخال مع زر السهم بداخله -->
                     <div class="newsletter-wrapper">
-                        <input type="email" class="newsletter-input" placeholder="أدخل بريدك الإلكتروني">
-                        <button class="newsletter-btn" aria-label="اشتراك">
+                        <form data-request="onSaveEmail" data-request-success="$('#email').val('');" data-request-flash>
+                        <input type="email"  name="email" id="email" class="newsletter-input" placeholder="أدخل بريدك الإلكتروني"   required>
+                        <button type="submit" data-stripe-load-indicator class="newsletter-btn" aria-label="اشتراك">
                             <i class="fa fa-chevron-left"></i>
                         </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -84,11 +86,11 @@
                 <div class="col-md-6">
                     <div class="social-links">
                         <h1 style="font-size: 40px;">تابعنا </h1>
-                        <a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fa fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fa fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fa fa-youtube"></i></a>
+                        <a href="{{ GeneralComponent.getSettingWebsiate.url_facebook }}" class="social-link"><i class="fa fa-twitter"></i></a>
+                        <a href="{{ GeneralComponent.getSettingWebsiate.url_instagram }}" class="social-link"><i class="fa fa-instagram"></i></a>
+                        <a href="{{ GeneralComponent.getSettingWebsiate.url_twitter }}" class="social-link"><i class="fa fa-linkedin"></i></a>
+                        <a href="{{ GeneralComponent.getSettingWebsiate.url_linkedin }}" class="social-link"><i class="fa fa-facebook"></i></a>
+                        <a href="{{ GeneralComponent.getSettingWebsiate.url_youtube }}" class="social-link"><i class="fa fa-youtube"></i></a>
                     </div>
                 </div>
 

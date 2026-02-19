@@ -16,76 +16,22 @@
       <!-- إضافة بعض البطاقات لعرض الخدمات -->
       <div class="row g-4 mt-4 services-items" data-aos="fade-up" data-aos-delay="500">
         <!-- خدمة 1: التخطيط و الاستشارات الاستراتيجية -->
+
+        {% for item in GeneralComponent.getServices %}
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
           <div class="service-card">
             <div class="service-icon-wrapper">
               <div class="service-icon">
-                <i class="fa fa-sitemap"></i>
+                {# <i class="fa fa-sitemap"></i> #}
+                <img src="{{ item.avatar.path }}" alt="لا يوجد صورة">
               </div>
             </div>
-            <h3>التخطيط و الاستشارات الاستراتيجية</h3>
+            <h3>{{ item.name }}</h3>
           </div>
         </div>
+        {% endfor %}
 
-        <!-- خدمة 2: الإنتاج الفني و الإعلامي المطور -->
-        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-          <div class="service-card">
-            <div class="service-icon-wrapper">
-              <div class="service-icon">
-                <i class="fa fa-film"></i>
-              </div>
-            </div>
-            <h3>الإنتاج الفني و الإعلامي المطور</h3>
-          </div>
-        </div>
-
-        <!-- خدمة 3: إدارة الحملات و الفعاليات المؤسسية -->
-        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-          <div class="service-card">
-            <div class="service-icon-wrapper">
-              <div class="service-icon">
-                <i class="fa fa-bullhorn"></i>
-              </div>
-            </div>
-            <h3>إدارة الحملات و الفعاليات المؤسسية</h3>
-          </div>
-        </div>
-
-        <!-- خدمة 4: الحلول الرقمية المتقدمة -->
-        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-          <div class="service-card">
-            <div class="service-icon-wrapper">
-              <div class="service-icon">
-                <i class="fa fa-cloud"></i>
-              </div>
-            </div>
-            <h3>الحلول الرقمية المتقدمة</h3>
-          </div>
-        </div>
-
-        <!-- خدمة 5: افكار هدايا دعائية و تذكارية مع الطباعة -->
-        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-          <div class="service-card">
-            <div class="service-icon-wrapper">
-              <div class="service-icon">
-                <i class="fa fa-gift"></i>
-              </div>
-            </div>
-            <h3>افكار هدايا دعائية و تذكارية مع الطباعة</h3>
-          </div>
-        </div>
-
-        <!-- خدمة 6: تصميم التطبيقات و المواقع الاكترونية -->
-        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-          <div class="service-card">
-            <div class="service-icon-wrapper">
-              <div class="service-icon">
-                <i class="fa fa-mobile"></i>
-              </div>
-            </div>
-            <h3>تصميم التطبيقات و المواقع الاكترونية</h3>
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>

@@ -3193,7 +3193,6 @@ responsive
 
 .newsletter-btn:hover {
     background: #f39c12;
-    transform: translateY(-50%) scale(1.1);
     box-shadow: 0 8px 20px rgba(237, 108, 3, 0.4);
 }
 
@@ -3203,9 +3202,7 @@ responsive
     
 }
 
-.newsletter-btn:hover i {
-    transform: translateX(-5px); /* تحريك السهم لليسار عند التمرير */
-}
+
 
 /* تأثير النبض للزر (اختياري) */
 @keyframes pulse {
@@ -3232,10 +3229,7 @@ responsive
   width: 10%; text-align: start;
   margin-top: 20px;
 }
-/* إيقاف النبض عند التمرير */
-.newsletter-btn:hover {
-    animation: none;
-}
+
         footer {
     background-image: url('../image-design/15.webp');
     background-repeat: no-repeat;
