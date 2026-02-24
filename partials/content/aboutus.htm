@@ -1,47 +1,40 @@
+
 <div id="about" class="about-us section">
-    <div class="container">
+    <div class="container-about">
         <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
-            <div class="row-about" >
+            <div class="row-about">
+                
                 <!-- محتوى النصوص -->
-                <div class="col-lg-6">
-                    <div class="about-content-wrapper">
-                        <!-- القسم الأول: من نحن -->
-                        <div class="about-text-block">
-                            <h1 class="text-about-header">
-                                <i class="fa fa-arrow-circle-left"></i>  {{ GeneralComponent.getSettingWebsiate.about_us_title_one }}
-                            </h1>
-                            <p class="text-about-content">
-                          {{ GeneralComponent.getSettingWebsiate.about_us_description_one }}
-                            </p>
-                        </div>
-                        
-                        <!-- القسم الثاني: ركائز تميزنا -->
-                        <div class="about-text-block">
-                            <h1 class="text-about-header">
-                                <i class="fa fa-arrow-circle-left"></i>  {{ GeneralComponent.getSettingWebsiate.about_us_title_two }}
-                            </h1>
-                            <p class="text-about-content">
-                             {{ GeneralComponent.getSettingWebsiate.about_us_description_two }}   
-                            </p>
-                        </div>
+                <div class="about-content-wrapper">
+                    <!-- القسم الأول: من نحن -->
+                    <div class="about-text-block">
+                        <h1 class="text-about-header">
+                            <i class="fa fa-arrow-circle-left"></i>  {{ GeneralComponent.getSettingWebsiate.about_us_title_one }}
+                        </h1>
+                        <p class="text-about-content">
+                            {{ GeneralComponent.getSettingWebsiate.about_us_description_one }}
+                        </p>
+                    </div>
+                    
+                    <!-- القسم الثاني: ركائز تميزنا -->
+                    <div class="about-text-block">
+                        <h1 class="text-about-header">
+                            <i class="fa fa-arrow-circle-left"></i>  {{ GeneralComponent.getSettingWebsiate.about_us_title_two }}
+                        </h1>
+                        <p class="text-about-content">
+                            {{ GeneralComponent.getSettingWebsiate.about_us_description_two }}   
+                        </p>
                     </div>
                 </div>
-                
-                <!-- صاحب الصورة -->
-                <div class="col-lg-6">
-                    <div class="about-image-wrapper wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="about-image-container">
-                            <img src="{{ 'assets/image-design/2.webp'|theme }}" 
-                                 alt="صورة تعبر عن نايلات"
-                                 class="about-main-image">
-                        </div>
+                <!-- صاحب الصورة - في الموبايل ستظهر أولاً -->
+                <div class="about-image-wrapper wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div class="about-image-container">
+                        <img src="{{ 'assets/image-design/2.webp'|theme }}" 
+                             alt="صورة تعبر عن نايلات"
+                             class="about-main-image">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
-

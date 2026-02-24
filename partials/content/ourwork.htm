@@ -11,7 +11,7 @@
           <h2 class="main-title">{{ 'أبرز انجازاتنا' |_ }}</h2>
           <p class="sub-text mt-3">{{ 'تصفح مجموعة من أعمالنا المميزة' |_ }}</p>
           <p class="description">{{ 'اكتشف كيف نجسد رؤيتنا الإبداعية في كل مشروع من خلال أمثلة حية ملهمة من أعمالنا' |_ }}</p>
-          <a href="#" class="btn-view-all">
+          <a href="/works" class="btn-view-all">
             <span>{{ 'جميع اعمالنا' |_ }}</span>
             <i class="fa fa-arrow-left"></i>
           </a>
@@ -22,7 +22,7 @@
       <div class="portfolio-wrapper">
         <div class="portfolio-scroll-container" id="portfolioScroll">
           <div class="portfolio-grid">
-          {% for item in GeneralComponent.getOurWorks %}
+          {% for item in GeneralComponent.getOurWorksPagination %}
             <!-- العمل 1 -->
             <div class="portfolio-item">
               <div class="portfolio-image">

@@ -1,42 +1,73 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
 <section class="clients-section py-5">
   <div class="container-fluid project py-5 mb-5">
     <div class="container">
-      <!-- عنوان القسم بتصميم جذاب -->
-     
-
-      <!-- سلايدر العملاء -->
-      <div class="clients-slider-wrapper wow fadeInUp" data-wow-delay=".5s">
-        <div class="clients-slider-container" id="clientsSlider">
-          <div class="clients-track">
-        {% for item in GeneralComponent.getClints %}
-
-            <div class="client-item">
-              <div class="client-logo-card">
-                <img src="{{ item.avatar.path }}" alt="عميل 1" class="client-logo">
-              </div>
-            </div>
-
-        {% endfor %}
-                        
-          
-          </div>
+      <!-- سلايدر العملاء باستخدام Splide -->
+      <section class="splide clients-splide" aria-label="عملاء نايلات" dir="ltr">
+        <div class="splide__arrows">
+          <button class="splide__arrow splide__arrow--prev">
+            <i class="fa fa-chevron-right"></i>
+          </button>
+          <button class="splide__arrow splide__arrow--next">
+            <i class="fa fa-chevron-left"></i>
+          </button>
         </div>
 
-        <!-- أزرار التحكم بالسلايدر -->
-        <button class="slider-arrow prev" id="sliderPrev">
-          <i class="fa fa-chevron-right"></i>
-        </button>
-        <button class="slider-arrow next" id="sliderNext">
-          <i class="fa fa-chevron-left"></i>
-        </button>
-      </div>
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for item in GeneralComponent.getClints %}
+            <li class="splide__slide">
+              <div class="client-logo-card">
+                <img src="{{ item.avatar.path }}" alt="عميل" class="client-logo">
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
 
-      <!-- نقاط التصفح -->
-      <div class="slider-pagination" id="sliderPagination">
-        <!-- تضاف النقاط تلقائياً بالجافاسكريبت -->
-      </div>
+        <!-- نقاط التصفح -->
+        <div class="splide__pagination"></div>
+      </section>
     </div>
   </div>
 </section>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var splide = new Splide('.clients-splide', {
+    type: 'loop',        
+    perPage: 4,         
+    perMove: 1,          
+    gap: '20px',        
+    padding: '20px',     
+    focus: 'center',     
+    updateOnMove: true,
+    pagination: true,    
+    arrows: true,        
+    autoplay: true,      
+    interval: 3000,      
+    speed: 800,          
+    pauseOnHover: true,  
+    pauseOnFocus: true,
+    rewind: true,        
+    breakpoints: {
+      992: {
+        perPage: 3,      
+      },
+      768: {
+        perPage: 2,      
+        gap: '15px',
+      },
+      480: {
+        perPage: 1,     
+        gap: '10px',
+      }
+    }
+  });
+
+  splide.mount();
+});
+</script>
